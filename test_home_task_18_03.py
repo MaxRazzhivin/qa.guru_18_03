@@ -1,6 +1,6 @@
-import random
 from math import pi
 from random import sample
+
 
 def test_greeting():
     """
@@ -9,8 +9,8 @@ def test_greeting():
     name = "Анна"
     age = 25
     # TODO Сформируйте нужную строку
-    output = f'Привет, {name}! Тебе {age} лет.'
-    print(output)
+    # output = f'Привет, {name}! Тебе {age} лет.'
+    output = "Привет, {a}! Тебе {b} лет.".format(a=name, b=age)
 
     # Проверяем результат
     assert output == "Привет, Анна! Тебе 25 лет."
@@ -59,8 +59,7 @@ def test_random_list():
 
     # TODO создайте список
 
-
-    l = sample(range(1,101), 10)
+    l = sample(range(1, 101), 10)
     l.sort()
 
     assert len(l) == 10
