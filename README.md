@@ -148,7 +148,8 @@ print(round(-2.6))         # Output: -3
 
 ## Too long line of code - how to carefully for eyes make breakdown and save readability of code
 
-If you need to break a line, you can use the backslash `\`, but this is not the most preferred method, as it can reduce readability:
+If you need to break a line, you can use the backslash `\`, but this is not the most preferred method, as it can reduce
+readability:
 
 ``` bash
 long_variable_name = some_function(arg1, arg2, arg3) + \
@@ -210,6 +211,15 @@ name = "Alice"
 • str.format(): Another way to format strings by using placeholders.
 
 print("{} is {} years old.".format(name, age))  # Output: "Alice is 30 years old."
+
+One more example of .format: 
+
+url_template = 'https://yourservice.com/v1/api/{}'
+users_url = url_template.format('users') -> https://yourservice.com/v1/api/users_url
+groups_url = url_template.format('groups') -> https://yourservice.com/v1/api/groups_url
+
+Also if we write f-string like this: 
+  print(f"{name=}, {age=}!") -> return name='Alice', age=30!
 ```
 
 ### String testing methods
@@ -220,4 +230,67 @@ print("{} is {} years old.".format(name, age))  # Output: "Alice is 30 years old
 • str.isdigit(): Returns True if all characters in the string are digits.
 
 • str.isalnum(): Returns True if all characters are alphanumeric.
+```
+
+## List functions
+
+```bash
+list.append(item) - Adds an item to the end of the list
+
+  my_list = [1, 2, 3]
+  my_list.append(4)
+  print(my_list)  # Output: [1, 2, 3, 4]
+
+list.extend(iterable) - Extends the list by appending elements from an iterable (like another list)
+
+  my_list.extend([5, 6])
+  print(my_list)  # Output: [1, 2, 3, 4, 5, 6]
+  
+list.insert(2, "a") - Inserts an item at a specified index
+
+  my_list.insert(2, 'a')
+  print(my_list)  # Output: [1, 2, 'a', 3, 4, 5, 6]
+
+list.remove(item) - Removes the first occurrence of an item from the list
+
+  my_list.remove('a')
+  print(my_list)  # Output: [1, 2, 3, 4, 5, 6]
+
+list.pop(index) - Removes and returns the item at the specified index (or the last item if no index is specified)
+
+  last_item = my_list.pop()
+  print(last_item)  # Output: 6
+  print(my_list)    # Output: [1, 2, 3, 4, 5]
+  
+list.index(item) - Returns the index of the first occurrence of an item in the list
+
+  index_of_3 = my_list.index(3)
+  print(index_of_3)  # Output: 2
+
+list.count(item) - Returns the number of occurrences of an item in the list
+
+  count_of_2 = my_list.count(2)
+  print(count_of_2)  # Output: 1
+
+list.sort() - Sorts the items of the list in place (ascending order by default)
+
+  my_list.sort()
+  print(my_list)  # Output: [1, 2, 3, 4, 5]
+
+list.reverse() - Reverses the elements of the list in place
+
+  my_list.reverse()
+  print(my_list)  # Output: [5, 4, 3, 2, 1]
+    
+```
+
+## List comprehensions - List comprehensions provide a concise way to create lists. They can be used for transforming and filtering items in a list
+
+```bash
+squared = [x**2 for x in range(10)]   # Creates a list of squares from 0 to 9
+print(squared)                         # Output: [0, 1, 4, 9, ..., 81]
+
+even_numbers = [x for x in range(20) if x % 2 == 0]   # List of even numbers
+print(even_numbers)                   # Output: [0, 2, ..., 18]
+
 ```
