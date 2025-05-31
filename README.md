@@ -294,3 +294,251 @@ even_numbers = [x for x in range(20) if x % 2 == 0]   # List of even numbers
 print(even_numbers)                   # Output: [0, 2, ..., 18]
 
 ```
+
+## Set is a powerful data structure that provides a collection of unique elements
+
+```bash
+You can create a set using curly braces or the set() constructor.
+
+     my_set = {1, 2, 3}
+     another_set = set([1, 2, 3, 4])
+     
+     
+.add(element): Adds a single element to the set
+
+     my_set.add(4)
+
+.update(iterable): Adds multiple elements from an iterable (like a list or another set)
+
+     my_set.update([5, 6])
+
+.remove(element): Removes an element from the set. Raises a KeyError if the element is not found
+
+     my_set.remove(4)
+
+.discard(element): Removes an element from the set if it exists. Does not raise an error if the element is not found.
+
+     my_set.discard(10)  # No error even though 10 is not in the set
+     
+.clear(): Removes all elements from the set
+
+     my_set.clear()
+
+```
+
+## Set Operations:
+
+```bash
+Union: .union(other_set) or | operator: Combines elements from both sets
+
+     set1 = {1, 2, 3}
+     set2 = {3, 4, 5}
+     union_set = set1.union(set2)  # {1, 2, 3, 4, 5}
+     
+Intersection: .intersection(other_set) or & operator: Returns common elements.
+
+     intersection_set = set1.intersection(set2)  # {3}
+     
+Difference: .difference(other_set) or - operator: Returns elements in the first set but not in the second.
+
+     difference_set = set1.difference(set2)  # {1, 2}
+     
+Symmetric Difference: symmetric_difference(other_set) or ^ operator: Returns elements in either set but not in both.
+
+     symmetric_diff_set = set1.symmetric_difference(set2)  # {1, 2, 4, 5}
+     
+Membership Testing - You can check if an element is in a set using the in keyword:
+
+     if 1 in my_set:
+         print("1 is in the set")
+     
+Length of a Set - Returns the number of unique elements in the set
+
+     length = len(my_set)
+
+Copying a Set - Creates a shallow copy of the set.
+
+     new_set = my_set.copy()
+
+Frozenset - Creates an immutable version of a set, which can be used as a key in dictionaries.
+
+     immutable_set = frozenset([1, 2, 3])
+      
+```
+
+## Dictionaries - a built-in data structure that allows you to store data in key-value pairs. They are unordered, mutable, and indexed, which makes them very versatile for various programming tasks.
+
+```bash
+Creating a Dictionary - you can create a dictionary using curly braces {} or the dict() constructor.
+
+my_dict = {'key1': 'value1', 'key2': 'value2'}
+another_dict = dict(key1='value1', key2='value2')
+
+Accessing Values - you can access values in a dictionary using their keys.
+
+value = my_dict['key1']  # Returns 'value1'
+
+Adding or Updating Key-Value Pairs - you can add new key-value pairs or update existing ones by assigning a value to a key
+
+my_dict['key3'] = 'value3'  # Adds a new key-value pair
+my_dict['key1'] = 'new_value'  # Updates the value for 'key1'
+
+```
+
+### Removing Key-Value Pairs: 
+
+```bash
+.pop(key) - Removes the specified key and returns its value. Raises a KeyError if the key is not found.
+
+  value = my_dict.pop('key2')  # Removes 'key2' and returns its value
+  
+.popitem(): Removes and returns the last inserted key-value pair as a tuple. Useful for LIFO (Last In, First Out) operations.
+
+  last_item = my_dict.popitem()  # Returns ('key3', 'value3')
+
+del statement: Deletes a key-value pair
+
+  del my_dict['key1']  # Deletes the entry with key 'key1'
+  
+```
+
+### Clearing the Dictionary
+
+```bash
+.clear() - Removes all items from the dictionary
+
+  my_dict.clear()  # The dictionary is now empty
+  
+```
+
+### Checking for Keys
+
+```bash
+in keyword: Checks if a key exists in the dictionary.
+
+  if 'key1' in my_dict:
+      print("Key exists")
+  
+```
+
+### Getting Values
+
+```bash
+.get(key, default=None): Returns the value for the specified key if it exists; otherwise, returns the default value (None if not specified).
+
+  value = my_dict.get('key4', 'default_value')  # Returns 'default_value'
+  
+```
+
+### Dictionary Comprehension
+
+```bash
+You can create dictionaries using comprehension for concise syntax
+
+squared_dict = {x: x**2 for x in range(5)}  # {0: 0, 1: 1, 2: 4, 3: 9, 4: 16}
+```
+
+### Iterating Through a Dictionary
+
+```bash
+You can iterate through keys, values, or key-value pairs:
+
+Keys:
+
+  for key in my_dict:
+      print(key)
+  
+Values:
+
+  for value in my_dict.values():
+      print(value)
+  
+Key-Value Pairs:
+
+  for key, value in my_dict.items():
+    print(key, value)
+  
+```
+### Copying a Dictionary:
+
+```bash
+.copy(): Creates a shallow copy of the dictionary.
+new_dict = my_dict.copy()
+```
+
+### Merging Dictionaries:
+
+```bash
+.update(other): Updates the dictionary with elements from another dictionary or iterable of key-value pairs.
+my_dict.update({'key4': 'value4', 'key5': 'value5'})
+```
+
+### Length of a Dictionary:
+
+length = len(my_dict) - Returns the number of key-value pairs in the dictionary
+
+### Nested Dictionaries:
+
+```bash
+Dictionaries can contain other dictionaries as values, allowing for complex data structures.
+
+nested_dict = {
+    'outer_key': {
+        'inner_key1': 'inner_value1',
+        'inner_key2': 'inner_value2'
+    }
+}
+```
+
+## Mutability - in Python refers to the ability of an object to be changed after it has been created
+
+### Mutable objects can be modified in place. This means that their contents can be changed without creating a new object. Common mutable types in Python include:
+
+```bash
+Lists: You can add, remove, or change elements
+
+  my_list = [1, 2, 3]
+  my_list.append(4)  # List is now [1, 2, 3, 4]
+  my_list[0] = 10    # List is now [10, 2, 3, 4]
+  
+For making separate list we should make real copy of list:
+
+  l2 = l1.copy()
+  l2.append(4) - by this we make l2 copy and l1 should be not changed
+  
+If our list contains additional list, set or dict inside we should use .deepcopy() to copy all data: 
+  from copy import deepcopy
+  l3 = deepcopy(l2)
+
+Dictionaries: You can add, remove, or change key-value pairs
+
+  my_dict = {'a': 1, 'b': 2}
+  my_dict['c'] = 3    # Dictionary is now {'a': 1, 'b': 2, 'c': 3}
+  my_dict['a'] = 10   # Dictionary is now {'a': 10, 'b': 2, 'c': 3}
+
+Sets: You can add or remove elements
+
+  my_set = {1, 2, 3}
+  my_set.add(4)       # Set is now {1, 2, 3, 4}
+  my_set.remove(2)    # Set is now {1, 3, 4}
+```
+
+### Immutable Objects - cannot be changed after they are created. Any modification will result in the creation of a new object. Common immutable types in Python include:
+
+```bash
+Tuples: Once created, you cannot change the elements of a tuple.
+
+  my_tuple = (1, 2, 3)
+  # my_tuple[0] = 10    # This will raise a TypeError
+  
+Strings: Strings cannot be modified; any operation that seems to modify a string will actually create a new string.
+
+  my_string = "hello"
+  new_string = my_string.upper()   # Creates a new string 'HELLO'
+
+Frozensets: Like sets but immutable
+
+  my_frozenset = frozenset([1, 2, 3])
+  # my_frozenset.add(4)   # This will raise an AttributeError
+  
+```
